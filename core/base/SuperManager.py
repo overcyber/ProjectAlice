@@ -55,6 +55,7 @@ class SuperManager(object):
 		self.DialogTemplateManager    = None #NOSONAR
 		self.InternetManager          = None #NOSONAR
 		self.LanguageManager          = None #NOSONAR
+		self.LlmManager               = None #NOSONAR
 		self.LocationManager          = None #NOSONAR
 		self.MqttManager              = None #NOSONAR
 		self.MultiIntentManager       = None #NOSONAR
@@ -222,6 +223,7 @@ class SuperManager(object):
 		from core.util.SubprocessManager import SubprocessManager
 		from core.webui.WebUINotificationManager import WebUINotificationManager
 		from core.util.BugReportManager import BugReportManager
+		from core.llm.LlmManager import LlmManager
 
 		self.BugReportManager = BugReportManager()
 		self.CommonsManager = CommonsManager()
@@ -245,6 +247,7 @@ class SuperManager(object):
 		self.TelemetryManager = TelemetryManager()
 		self.LocationManager = LocationManager()
 		self.InternetManager = InternetManager()
+		self.LlmManager = LlmManager()
 		self.WakewordRecorder = WakewordRecorder()
 		self.TalkManager = TalkManager()
 		self.WebUiManager = WebUIManager()

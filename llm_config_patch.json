@@ -1,0 +1,217 @@
+{
+  "activeLlm": {
+    "defaultValue": "openai",
+    "dataType": "list",
+    "isSensitive": false,
+    "values": [
+      "openai",
+      "anthropic",
+      "gemini"
+    ],
+    "description": "The LLM provider to use for advanced conversations",
+    "category": "llm"
+  },
+  "llmTriggerPhrases": {
+    "defaultValue": ["let's talk", "let us talk"],
+    "dataType": "list",
+    "isSensitive": false,
+    "description": "Phrases that will trigger the LLM conversation mode",
+    "category": "llm"
+  },
+  "llmMaxHistoryLength": {
+    "defaultValue": 10,
+    "dataType": "integer",
+    "isSensitive": false,
+    "description": "Maximum number of exchanges to keep in conversation history",
+    "category": "llm"
+  },
+  "openAiApiKey": {
+    "defaultValue": "",
+    "dataType": "string",
+    "isSensitive": true,
+    "description": "Your OpenAI API key",
+    "category": "credentials",
+    "parent": {
+      "config": "activeLlm",
+      "condition": "is",
+      "value": "openai"
+    }
+  },
+  "openAiModel": {
+    "defaultValue": "gpt-3.5-turbo",
+    "dataType": "string",
+    "isSensitive": false,
+    "description": "The OpenAI model to use",
+    "category": "llm",
+    "parent": {
+      "config": "activeLlm",
+      "condition": "is",
+      "value": "openai"
+    }
+  },
+  "openAiSystemPrompt": {
+    "defaultValue": "You are a helpful assistant integrated with a smart home system. Respond in a concise and friendly manner.",
+    "dataType": "longstring",
+    "isSensitive": false,
+    "description": "System prompt to use with OpenAI models",
+    "category": "llm",
+    "parent": {
+      "config": "activeLlm",
+      "condition": "is",
+      "value": "openai"
+    }
+  },
+  "openAiTemperature": {
+    "defaultValue": 0.7,
+    "dataType": "range",
+    "min": 0,
+    "max": 1,
+    "step": 0.1,
+    "isSensitive": false,
+    "description": "Temperature setting for OpenAI responses (0 = deterministic, 1 = creative)",
+    "category": "llm",
+    "parent": {
+      "config": "activeLlm",
+      "condition": "is",
+      "value": "openai"
+    }
+  },
+  "openAiMaxTokens": {
+    "defaultValue": 150,
+    "dataType": "integer",
+    "isSensitive": false,
+    "description": "Maximum tokens in OpenAI responses",
+    "category": "llm",
+    "parent": {
+      "config": "activeLlm",
+      "condition": "is",
+      "value": "openai"
+    }
+  },
+  "anthropicApiKey": {
+    "defaultValue": "",
+    "dataType": "string",
+    "isSensitive": true,
+    "description": "Your Anthropic API key",
+    "category": "credentials",
+    "parent": {
+      "config": "activeLlm",
+      "condition": "is",
+      "value": "anthropic"
+    }
+  },
+  "anthropicModel": {
+    "defaultValue": "claude-3-haiku-20240307",
+    "dataType": "string",
+    "isSensitive": false,
+    "description": "The Anthropic model to use",
+    "category": "llm",
+    "parent": {
+      "config": "activeLlm",
+      "condition": "is",
+      "value": "anthropic"
+    }
+  },
+  "anthropicSystemPrompt": {
+    "defaultValue": "You are a helpful assistant integrated with a smart home system. Respond in a concise and friendly manner.",
+    "dataType": "longstring",
+    "isSensitive": false,
+    "description": "System prompt to use with Anthropic models",
+    "category": "llm",
+    "parent": {
+      "config": "activeLlm",
+      "condition": "is",
+      "value": "anthropic"
+    }
+  },
+  "anthropicTemperature": {
+    "defaultValue": 0.7,
+    "dataType": "range",
+    "min": 0,
+    "max": 1,
+    "step": 0.1,
+    "isSensitive": false,
+    "description": "Temperature setting for Anthropic responses (0 = deterministic, 1 = creative)",
+    "category": "llm",
+    "parent": {
+      "config": "activeLlm",
+      "condition": "is",
+      "value": "anthropic"
+    }
+  },
+  "anthropicMaxTokens": {
+    "defaultValue": 150,
+    "dataType": "integer",
+    "isSensitive": false,
+    "description": "Maximum tokens in Anthropic responses",
+    "category": "llm",
+    "parent": {
+      "config": "activeLlm",
+      "condition": "is",
+      "value": "anthropic"
+    }
+  },
+  "geminiApiKey": {
+    "defaultValue": "",
+    "dataType": "string",
+    "isSensitive": true,
+    "description": "Your Google Gemini API key",
+    "category": "credentials",
+    "parent": {
+      "config": "activeLlm",
+      "condition": "is",
+      "value": "gemini"
+    }
+  },
+  "geminiModel": {
+    "defaultValue": "gemini-1.0-pro",
+    "dataType": "string",
+    "isSensitive": false,
+    "description": "The Gemini model to use",
+    "category": "llm",
+    "parent": {
+      "config": "activeLlm",
+      "condition": "is",
+      "value": "gemini"
+    }
+  },
+  "geminiSystemPrompt": {
+    "defaultValue": "You are a helpful assistant integrated with a smart home system. Respond in a concise and friendly manner.",
+    "dataType": "longstring",
+    "isSensitive": false,
+    "description": "System prompt to use with Gemini models",
+    "category": "llm",
+    "parent": {
+      "config": "activeLlm",
+      "condition": "is",
+      "value": "gemini"
+    }
+  },
+  "geminiTemperature": {
+    "defaultValue": 0.7,
+    "dataType": "range",
+    "min": 0,
+    "max": 1,
+    "step": 0.1,
+    "isSensitive": false,
+    "description": "Temperature setting for Gemini responses (0 = deterministic, 1 = creative)",
+    "category": "llm",
+    "parent": {
+      "config": "activeLlm",
+      "condition": "is",
+      "value": "gemini"
+    }
+  },
+  "geminiMaxTokens": {
+    "defaultValue": 150,
+    "dataType": "integer",
+    "isSensitive": false,
+    "description": "Maximum tokens in Gemini responses",
+    "category": "llm",
+    "parent": {
+      "config": "activeLlm",
+      "condition": "is",
+      "value": "gemini"
+    }
+  }
+}
